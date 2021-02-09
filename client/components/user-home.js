@@ -1,20 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import Table from './table'
 /**
  * COMPONENT
  */
-export const UserHome = props => {
-  const {email} = props
-
-  return (
-    <div>
-      <h3>Welcome, {email}</h3>
-      <h4>Today's Appointments🧐👩‍⚕️🩺</h4>
-      <Table />
-    </div>
-  )
+class UserHome extends Component {
+  render() {
+    const {email} = this.props
+    return (
+      <div>
+        <h3>Welcome, {email}</h3>
+        <h4>Today's Appointments🧐👩‍⚕️🩺</h4>
+        <Table />
+      </div>
+    )
+  }
 }
 
 /**
