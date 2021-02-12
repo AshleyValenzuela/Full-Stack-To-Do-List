@@ -2,23 +2,20 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Appointment = db.define('appointment', {
-  patientName: {
-    type: Sequelize.STRING,
-    allowNull: false
+  name: {
+    type: Sequelize.STRING
   },
   time: {
-    type: Sequelize.STRING,
-    unique: true
+    type: Sequelize.STRING
   },
   type: {
     type: Sequelize.STRING
   },
   address: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: Sequelize.STRING
   },
   phone: {
-    type: Sequelize.INTEGER
+    type: Sequelize.FLOAT
   }
 })
 
