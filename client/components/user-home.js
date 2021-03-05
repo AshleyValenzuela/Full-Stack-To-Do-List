@@ -31,6 +31,7 @@ class UserHome extends Component {
   }
 
   handleChange(event) {
+    console.log('EVENT.TARGET:', event.target)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -38,6 +39,8 @@ class UserHome extends Component {
 
   async handleSubmit(event) {
     event.preventDefault()
+    console.log('EVENT in handleSubmit', event)
+
     const {data} = await axios.post('/api/appointments', this.state)
     this.setState({
       currentAppointments: [...this.state.currentAppointments, data],

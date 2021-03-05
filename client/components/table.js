@@ -11,6 +11,7 @@ const Table = props => (
           <td>Type</td>
           <td>Address</td>
           <td>Phone</td>
+          <td>Priority</td>
         </tr>
         {props.appointments.map((app, idx) => {
           return (
