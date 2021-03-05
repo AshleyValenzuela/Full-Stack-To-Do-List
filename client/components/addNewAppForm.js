@@ -7,7 +7,8 @@ const AddNewAppForm = ({
   time,
   type,
   address,
-  phone
+  phone,
+  priority
 }) => (
   <div>
     <form onSubmit={handleSubmit}>
@@ -26,6 +27,13 @@ const AddNewAppForm = ({
       />
       <label>Phone</label>
       <input name="phone" type="text" value={phone} onChange={handleChange} />
+      <label>Priority</label>
+      <input
+        name="priority"
+        type="text"
+        value={priority}
+        onChange={handleChange}
+      />
       <button type="submit">Submit new appointment</button>
     </form>
   </div>

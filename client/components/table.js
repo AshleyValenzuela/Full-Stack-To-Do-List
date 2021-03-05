@@ -21,6 +21,7 @@ const Table = props => (
               <td>{app.type}</td>
               <td>{app.address}</td>
               <td>{app.phone}</td>
+              <td>{app.priority}</td>
             </tr>
           )
         })}

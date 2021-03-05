@@ -16,7 +16,8 @@ class UserHome extends Component {
       time: '',
       type: '',
       address: '',
-      phone: 0
+      phone: 0,
+      priority: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,8 +26,7 @@ class UserHome extends Component {
   async componentDidMount() {
     const {data} = await axios.get('/api/appointments')
     this.setState({
-      currentAppointments: data,
-      name: ''
+      currentAppointments: data
     })
   }
 
@@ -39,14 +39,14 @@ class UserHome extends Component {
   async handleSubmit(event) {
     event.preventDefault()
     const {data} = await axios.post('/api/appointments', this.state)
-    console.log(data)
     this.setState({
       currentAppointments: [...this.state.currentAppointments, data],
       name: '',
       time: '',
       type: '',
       address: '',
-      phone: 0
+      phone: 0,
+      priority: ''
     })
   }
 
@@ -66,6 +66,7 @@ class UserHome extends Component {
           type={this.state.type}
           address={this.state.address}
           phone={this.state.phone}
+          priority={this.state.priority}
         />
         <Table appointments={appointments} />
       </div>
