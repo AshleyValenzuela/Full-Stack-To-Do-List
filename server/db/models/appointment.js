@@ -16,6 +16,9 @@ const Appointment = db.define('appointment', {
   },
   phone: {
     type: Sequelize.FLOAT
+  },
+  priority: {
+    type: Sequelize.STRING
   }
 })
 
