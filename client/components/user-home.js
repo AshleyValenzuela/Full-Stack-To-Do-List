@@ -16,7 +16,7 @@ class UserHome extends Component {
       time: '',
       type: '',
       address: '',
-      phone: 0,
+      phone: 1,
       priority: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -31,7 +31,6 @@ class UserHome extends Component {
   }
 
   handleChange(event) {
-    console.log('EVENT.TARGET:', event.target)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -39,16 +38,16 @@ class UserHome extends Component {
 
   async handleSubmit(event) {
     event.preventDefault()
-    console.log('EVENT in handleSubmit', event)
-
-    const {data} = await axios.post('/api/appointments', this.state)
+    let {name, time, type, address, phone, priority} = this.state
+    let newAptInfo = {name, time, type, address, phone, priority}
+    const {data} = await axios.post('/api/appointments', newAptInfo)
     this.setState({
       currentAppointments: [...this.state.currentAppointments, data],
       name: '',
       time: '',
       type: '',
       address: '',
-      phone: 0,
+      phone: 1,
       priority: ''
     })
   }
