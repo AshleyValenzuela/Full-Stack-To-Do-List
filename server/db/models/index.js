@@ -6,7 +6,7 @@ const Appointment = require('./appointment')
  *
  *    BlogPost.belongsTo(User)
  */
-
+Appointment.belongsTo(User)
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'
